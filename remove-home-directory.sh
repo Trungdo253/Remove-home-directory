@@ -17,6 +17,6 @@ cp -a /temp/home /
 rm -rf /temp
 # Comment line /home from /etc/fstab
 linkFstab=$(cat /etc/fstab | grep home)
-sed -i "s|#$linkFstab|$linkFstab|g" /etc/fstab
+sed -i "s|$linkFstab|#$linkFstab|g" /etc/fstab
 # Sync systemd up with the changes.
 dracut --regenerate-all --force
